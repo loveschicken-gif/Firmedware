@@ -27,7 +27,7 @@ jobs:
       # GitHub Actions runs on GitHub-hosted runners, not on the local/private firm network.
       # CI must use an isolated temporary PostgreSQL service, never a local office database.
       DATABASE_URL: postgresql://firmedware:firmedware@localhost:5432/firmedware_test
-      AUTH_SECRET: ci-only-auth-secret-32-characters-minimum
+      AUTH_SECRET: 7f2f9d4b8dcb42fd8f29b0fd9b26d84be69eb7f977a4e6a803df9d5f1d2f8b17
       AUTH_URL: http://localhost:3000
       SEED_ADMIN_EMAIL: ci-admin@firmedware.test
       SEED_ADMIN_PASSWORD: ci-only-seed-password
@@ -67,7 +67,7 @@ jobs:
       # GitHub Actions runs on GitHub-hosted runners, not on the local/private firm network.
       # CI must use an isolated temporary PostgreSQL service, never a local office database.
       DATABASE_URL: postgresql://firmedware:firmedware@localhost:5432/firmedware_test
-      AUTH_SECRET: ci-only-auth-secret-32-characters-minimum
+      AUTH_SECRET: 7f2f9d4b8dcb42fd8f29b0fd9b26d84be69eb7f977a4e6a803df9d5f1d2f8b17
       AUTH_URL: http://localhost:3000
       SEED_ADMIN_EMAIL: ci-admin@firmedware.test
       SEED_ADMIN_PASSWORD: ci-only-seed-password
