@@ -23,6 +23,12 @@ One shared instance, one PostgreSQL database, one URL for all users. Summary and
 
 **ภาษาไทย:** หนึ่ง instance หนึ่งฐานข้อมูล หนึ่ง URL — สรุปที่ [START_HERE.md](./START_HERE.md)
 
+### CI database isolation / การแยกฐานข้อมูล CI
+
+GitHub Actions CI uses a **temporary PostgreSQL test service** on the runner (`firmedware_test`). It does **not** use your local/private firm database, and CI data is destroyed after each workflow run.
+
+Never use real client/matter data in CI. Do not commit real `.env` files or database dumps to this repository.
+
 ---
 
 ## 1. First admin (single tenant) / 1. แอดมินคนแรก (เทนแนนต์เดียว)
