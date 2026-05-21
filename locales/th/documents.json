@@ -1,0 +1,111 @@
+{
+  "title": "อ้างอิงเอกสาร",
+  "description": "URL ภายนอก path โฟลเดอร์ในเครื่อง และข้อมูลอ้างอิง manual (เก็บเฉพาะ metadata ไม่อัปโหลดไฟล์)",
+  "addLink": "เพิ่มอ้างอิง",
+  "newTitle": "เพิ่มอ้างอิงเอกสาร",
+  "editTitle": "แก้ไขอ้างอิงเอกสาร",
+  "empty": "ไม่พบอ้างอิงเอกสาร",
+  "table": {
+    "provider": "ผู้ให้บริการ",
+    "referenceType": "ประเภท",
+    "sensitivity": "ความลับ"
+  },
+  "referenceType": {
+    "externalUrl": "URL ภายนอก",
+    "localPath": "Path ในเครื่อง / manual path",
+    "manualReference": "อ้างอิง manual"
+  },
+  "sensitivity": {
+    "NORMAL": "ปกติ",
+    "CONFIDENTIAL": "ลับ",
+    "HIGHLY_CONFIDENTIAL": "ลับมาก",
+    "PRIVILEGED": "สิทธิ์ลับ"
+  },
+  "archive": "เก็บถาวรอ้างอิง",
+  "detail": {
+    "referenceType": "ประเภทอ้างอิง",
+    "referenceValue": "ข้อมูลอ้างอิง",
+    "externalLink": "URL ภายนอก",
+    "folderPath": "โฟลเดอร์หรือ path ไฟล์",
+    "filePath": "Path ไฟล์",
+    "manualReference": "อ้างอิง manual",
+    "openLink": "เปิดลิงก์",
+    "openReference": "เปิดอ้างอิง",
+    "copyPath": "คัดลอก path",
+    "copyReference": "คัดลอกข้อมูลอ้างอิง",
+    "copiedPath": "คัดลอก path แล้ว",
+    "copiedReference": "คัดลอกข้อมูลอ้างอิงแล้ว",
+    "openDocument": "เปิดเอกสาร",
+    "openExternalAria": "เปิดลิงก์ภายนอก"
+  },
+  "form": {
+    "client": "ลูกความ *",
+    "selectClient": "เลือกลูกความ",
+    "matterOptional": "คดี/งาน (ไม่บังคับ)",
+    "noMatter": "ไม่ระบุคดี/งาน",
+    "title": "หัวข้อ *",
+    "referenceType": "ประเภทอ้างอิง *",
+    "referenceTypeExternalUrl": "URL ภายนอก",
+    "referenceTypeLocalPath": "Path ในเครื่อง / manual path",
+    "referenceTypeManualReference": "อ้างอิง manual",
+    "url": "URL *",
+    "urlPlaceholder": "https://drive.google.com/…",
+    "pathLabel": "โฟลเดอร์หรือ path ไฟล์ *",
+    "pathPlaceholder": "\\\\OfficeServer\\ClientFiles\\ชื่อลูกความ\\ชื่องาน",
+    "manualLabel": "อ้างอิง manual *",
+    "manualPlaceholder": "ตู้ 2 / ลิ้นชัก B / กล่องเก็บ 2025",
+    "storageProvider": "ที่เก็บเอกสาร",
+    "providerGoogleDrive": "Google Drive",
+    "providerOneDrive": "OneDrive",
+    "providerSharePoint": "SharePoint",
+    "providerDropbox": "Dropbox",
+    "providerLocalFolder": "โฟลเดอร์แชร์ในเครื่อง",
+    "providerOther": "อื่นๆ",
+    "providerName": "ชื่อผู้ให้บริการ *",
+    "providerNamePlaceholder": "เช่น SharePoint, NetDocuments",
+    "addLink": "เพิ่มอ้างอิงเอกสาร",
+    "sensitivity": "ระดับความลับ",
+    "permissionWarningExternal": "Firmedware จัดเก็บเฉพาะลิงก์เอกสาร กรุณาตรวจสอบว่าสิทธิ์การเข้าถึงเอกสารภายนอกถูกจำกัดเฉพาะผู้ที่ได้รับอนุญาตแล้ว",
+    "permissionWarningLocal": "Firmedware จัดเก็บ path นี้เป็นข้อความเท่านั้น กรุณาตรวจสอบว่าโฟลเดอร์หรือไดรฟ์ดังกล่าวเข้าถึงได้เฉพาะผู้ที่ได้รับอนุญาตในสำนักงาน",
+    "permissionWarningManual": "ข้อมูลอ้างอิงแบบ manual อาจเปิดเผยข้อมูลลูกความหรือข้อมูลงานคดีได้ ควรหลีกเลี่ยงรายละเอียดที่อ่อนไหวเกินความจำเป็น",
+    "helperLocalPath": "Firmedware จัดเก็บ path นี้เป็นข้อความเท่านั้น ไม่ตรวจสอบว่าโฟลเดอร์มีอยู่จริงและไม่เข้าถึงไฟล์",
+    "helperManualReference": "ใช้สำหรับเอกสารกระดาษ กล่องเก็บ หรือการอ้างอิงที่เก็บนอกระบบ",
+    "permissionConfirmLabel": "ยืนยันว่าสิทธิ์การเข้าถึงที่เก็บเอกสารเหมาะสมสำหรับผู้ที่ได้รับอนุญาตเท่านั้น",
+    "permissionConfirmRequired": "ต้องยืนยันสิทธิ์ก่อนบันทึก"
+  },
+  "provider": {
+    "googleDrive": "Google Drive",
+    "oneDrive": "OneDrive",
+    "sharePoint": "SharePoint",
+    "dropbox": "Dropbox",
+    "localFolder": "โฟลเดอร์ในเครื่อง",
+    "other": "อื่นๆ"
+  },
+  "validation": {
+    "clientRequired": "กรุณาเลือกลูกความ",
+    "titleRequired": "กรุณาระบุหัวข้อ",
+    "referenceRequired": "กรุณาระบุข้อมูลอ้างอิง",
+    "urlRequired": "กรุณาระบุ URL",
+    "urlInvalid": "กรุณาระบุ URL ที่ถูกต้อง (http หรือ https)",
+    "pathInvalid": "กรุณาระบุ path โฟลเดอร์หรือไฟล์ที่ถูกต้อง",
+    "manualReferenceInvalid": "กรุณาระบุข้อมูลอ้างอิง manual",
+    "providerInvalid": "กรุณาเลือกผู้ให้บริการสำหรับ URL ภายนอก",
+    "providerNameRequired": "กรุณาระบุชื่อผู้ให้บริการเมื่อเลือก อื่นๆ",
+    "permissionConfirmRequired": "ต้องยืนยันสิทธิ์ก่อนบันทึก"
+  },
+  "error": {
+    "matterNotFound": "ไม่พบคดี/งานหรือไม่มีสิทธิ์เข้าถึง",
+    "clientNotFound": "ไม่พบลูกความหรือไม่มีสิทธิ์เข้าถึง",
+    "noPermissionAdd": "คุณไม่มีสิทธิ์เพิ่มอ้างอิงเอกสาร",
+    "noPermissionEdit": "คุณไม่มีสิทธิ์แก้ไขอ้างอิงเอกสาร",
+    "notFoundOrDenied": "ไม่พบอ้างอิงเอกสารหรือไม่มีสิทธิ์เข้าถึง",
+    "noPermissionDelete": "คุณไม่มีสิทธิ์ลบอ้างอิงเอกสาร"
+  },
+  "activity": {
+    "created": "สร้างอ้างอิงเอกสาร \"{name}\"",
+    "added": "เพิ่มอ้างอิงเอกสาร \"{name}\"",
+    "updated": "อัปเดตอ้างอิงเอกสาร \"{name}\"",
+    "pathCopied": "คัดลอก path สำหรับ \"{name}\"",
+    "referenceCopied": "คัดลอกข้อมูลอ้างอิงสำหรับ \"{name}\""
+  }
+}

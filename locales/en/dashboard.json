@@ -1,0 +1,22 @@
+{
+  "title": "Dashboard",
+  "description": "Overview of your firm's active work",
+  "stat": {
+    "openMatters": "Open matters",
+    "clients": "Clients",
+    "overdueTasks": "Overdue tasks",
+    "dueThisWeek": "Due this week",
+    "billingOutstanding": "Outstanding invoices",
+    "billingOverdue": "Overdue invoices",
+    "billingPaidMonth": "Paid this month"
+  },
+  "quickAction": {
+    "newClient": "+ New client",
+    "newMatter": "+ New matter",
+    "documentLink": "+ Document link",
+    "billingRecord": "+ Billing record"
+  },
+  "recentActivity": "Recent activity",
+  "noRecentActivity": "No recent activity.",
+  "viewAllActivity": "View all activity →"
+}

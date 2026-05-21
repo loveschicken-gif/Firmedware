@@ -1,0 +1,50 @@
+{
+  "title": "บัญชี",
+  "description": "โปรไฟล์ ความปลอดภัย และการดูแลระบบ",
+  "profile": {
+    "title": "โปรไฟล์",
+    "description": "ชื่อที่แสดงและภาษาที่ต้องการ",
+    "email": "อีเมล",
+    "name": "ชื่อ",
+    "preferredLanguage": "ภาษาที่ต้องการ",
+    "save": "บันทึกโปรไฟล์",
+    "saved": "อัปเดตโปรไฟล์แล้ว"
+  },
+  "security": {
+    "title": "ความปลอดภัย",
+    "description": "เปลี่ยนรหัสผ่านเป็นประจำ ใช้รหัสที่ไม่ซ้ำกับบริการอื่น",
+    "currentPassword": "รหัสผ่านปัจจุบัน",
+    "newPassword": "รหัสผ่านใหม่",
+    "confirmPassword": "ยืนยันรหัสผ่านใหม่",
+    "save": "เปลี่ยนรหัสผ่าน",
+    "saved": "อัปเดตรหัสผ่านแล้ว"
+  },
+  "myActivity": {
+    "title": "ประวัติคดี/งานล่าสุด",
+    "description": "บันทึกการใช้งานในคดี/งานที่คุณได้รับมอบหมาย",
+    "empty": "ยังไม่มีประวัติในคดี/งานที่มอบหมาย"
+  },
+  "adminHub": {
+    "title": "การดูแลระบบ",
+    "description": "จัดการสิทธิ์ กลุ่ม และการตั้งค่าสำนักงาน",
+    "usersTitle": "ผู้ใช้งาน",
+    "usersDescription": "สร้างบัญชี กำหนดบทบาท และปิดการใช้งาน",
+    "groupsTitle": "กลุ่ม",
+    "groupsDescription": "ทีมงานที่มอบหมายให้คดี/งาน",
+    "activityTitle": "ประวัติการใช้งาน",
+    "activityDescription": "ประวัติทั้งสำนักงาน (เฉพาะผู้ดูแลระบบ)",
+    "settingsTitle": "ตั้งค่าสำนักงาน",
+    "settingsDescription": "ชื่อ เขตเวลา ภาษา และฟีเจอร์เสริม"
+  },
+  "validation": {
+    "nameRequired": "กรุณาระบุชื่อ",
+    "languageRequired": "กรุณาเลือกภาษา",
+    "currentPasswordRequired": "กรุณาระบุรหัสผ่านปัจจุบัน",
+    "passwordMin8": "รหัสผ่านต้องมีอย่างน้อย 8 ตัวอักษร",
+    "passwordMismatch": "รหัสผ่านใหม่ไม่ตรงกัน"
+  },
+  "error": {
+    "userNotFound": "ไม่พบผู้ใช้",
+    "currentPasswordInvalid": "รหัสผ่านปัจจุบันไม่ถูกต้อง"
+  }
+}

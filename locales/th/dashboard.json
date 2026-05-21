@@ -1,0 +1,22 @@
+{
+  "title": "แดชบอร์ด",
+  "description": "ภาพรวมงานที่กำลังดำเนินการของสำนักงาน",
+  "stat": {
+    "openMatters": "คดี/งานที่เปิดอยู่",
+    "clients": "ลูกความ",
+    "overdueTasks": "งานเลยกำหนด",
+    "dueThisWeek": "ครบกำหนดสัปดาห์นี้",
+    "billingOutstanding": "ใบแจ้งค้างชำระ",
+    "billingOverdue": "ใบแจ้งเกินกำหนด",
+    "billingPaidMonth": "ชำระแล้วเดือนนี้"
+  },
+  "quickAction": {
+    "newClient": "+ เพิ่มลูกความ",
+    "newMatter": "+ เพิ่มคดี/งาน",
+    "documentLink": "+ เพิ่มลิงก์เอกสาร",
+    "billingRecord": "+ รายการเรียกเก็บ"
+  },
+  "recentActivity": "ประวัติล่าสุด",
+  "noRecentActivity": "ยังไม่มีประวัติล่าสุด",
+  "viewAllActivity": "ดูประวัติทั้งหมด →"
+}

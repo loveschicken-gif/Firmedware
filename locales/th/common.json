@@ -1,0 +1,138 @@
+{
+  "appTagline": "ระบบติดตามงานกฎหมาย",
+  "metadata": {
+    "description": "ระบบติดตามงานกฎหมายสำหรับสำนักงานขนาดเล็ก"
+  },
+  "nav": {
+    "dashboard": "แดชบอร์ด",
+    "clients": "ลูกความ",
+    "matters": "คดี/งาน",
+    "documents": "เอกสาร",
+    "tasks": "งานที่ต้องทำ",
+    "billing": "การเรียกเก็บเงิน",
+    "search": "ค้นหา",
+    "tags": "แท็ก",
+    "activity": "ประวัติการใช้งาน",
+    "users": "ผู้ใช้งาน",
+    "groups": "กลุ่มผู้ใช้งาน",
+    "settings": "ตั้งค่า",
+    "security": "ความปลอดภัย",
+    "aiConnectors": "ตัวเชื่อม AI",
+    "workflowStatuses": "สถานะขั้นตอนงาน"
+  },
+  "confidentiality": {
+    "notice": "ระบบนี้อาจมีข้อมูลลูกความและข้อมูลงานคดีที่เป็นความลับ การเข้าถึงจะถูกบันทึกไว้ ห้ามแบ่งปันบัญชีผู้ใช้หรือส่งต่อลิงก์เอกสารนอกเหนือจากกระบวนการที่ได้รับอนุญาต",
+    "dismiss": "ปิดสำหรับเซสชันนี้"
+  },
+  "language": {
+    "label": "ภาษา",
+    "th": "ไทย",
+    "en": "English"
+  },
+  "signOut": "ออกจากระบบ",
+  "auth": {
+    "signInTitle": "เข้าสู่ระบบสำนักงานของคุณ",
+    "email": "อีเมล",
+    "password": "รหัสผ่าน",
+    "signIn": "เข้าสู่ระบบ",
+    "signingIn": "กำลังเข้าสู่ระบบ…",
+    "invalidCredentials": "อีเมลหรือรหัสผ่านไม่ถูกต้อง",
+    "loading": "กำลังโหลด…"
+  },
+  "edit": "แก้ไข",
+  "cancel": "ยกเลิก",
+  "saveChanges": "บันทึกการเปลี่ยนแปลง",
+  "saving": "กำลังบันทึก…",
+  "savedSuccessfully": "บันทึกสำเร็จ",
+  "emptyValue": "—",
+  "overview": "ภาพรวม",
+  "activity": "ประวัติ",
+  "tags": "แท็ก",
+  "name": "ชื่อ",
+  "status": "สถานะ",
+  "notes": "หมายเหตุ",
+  "email": "อีเมล",
+  "phone": "โทรศัพท์",
+  "address": "ที่อยู่",
+  "company": "บริษัท",
+  "title": "หัวข้อ",
+  "client": "ลูกความ",
+  "matter": "คดี/งาน",
+  "assignee": "ผู้รับผิดชอบ",
+  "provider": "ผู้ให้บริการ",
+  "active": "ใช้งาน",
+  "inactive": "ไม่ใช้งาน",
+  "archive": {
+    "default": "เก็บถาวร",
+    "confirm": "คุณต้องการ{verb}รายการนี้หรือไม่? รายการจะถูกลบแบบนุ่มและซ่อนจากรายการ ไม่ถูกลบถาวรจากระบบ"
+  },
+  "activityLog": {
+    "empty": "ยังไม่มีประวัติการใช้งาน",
+    "unknownActor": "ผู้ใช้ไม่ทราบชื่อ",
+    "immutableNotice": "บันทึกการตรวจสอบเพิ่มได้อย่างเดียว แก้ไขหรือลบในแอปไม่ได้ (บังคับที่ฐานข้อมูล) ดาวน์โหลด CSV เพื่อเก็บสำเนา",
+    "downloadCsv": "ดาวน์โหลดประวัติ (CSV)",
+    "entryCount": "แสดง {count} รายการ (ดาวน์โหลดเพื่อส่งออกทั้งหมด)",
+    "viewedClient": "ดูลูกความ \"{name}\"",
+    "viewedMatter": "ดูคดี/งาน \"{name}\"",
+    "viewedDocument": "ดูลิงก์เอกสาร \"{name}\"",
+    "viewedTask": "ดูงาน \"{name}\"",
+    "archived": "เก็บถาวร{entity} \"{name}\" (ลบแบบนุ่ม)"
+  },
+  "search": {
+    "title": "ค้นหา",
+    "description": "ค้นหาลูกความ คดี/งาน และลิงก์เอกสาร",
+    "placeholder": "ค้นหาตามชื่อ เลขคดี แท็ก หมายเหตุ…",
+    "submit": "ค้นหา",
+    "clientsSection": "ลูกความ ({count})",
+    "mattersSection": "คดี/งาน ({count})",
+    "documentsSection": "เอกสาร ({count})",
+    "noClients": "ไม่พบลูกความที่ตรงกัน",
+    "noMatters": "ไม่พบคดี/งานที่ตรงกัน",
+    "noDocuments": "ไม่พบเอกสารที่ตรงกัน"
+  },
+  "validation": {
+    "invalidInput": "ข้อมูลไม่ถูกต้อง",
+    "invalidEmail": "อีเมลไม่ถูกต้อง"
+  },
+  "error": {
+    "accessDenied": "ไม่มีสิทธิ์เข้าถึง"
+  },
+  "enum": {
+    "matterStatus": {
+      "OPEN": "เปิด",
+      "PENDING": "รอดำเนินการ",
+      "ON_HOLD": "พักไว้",
+      "CLOSED": "ปิด"
+    },
+    "clientStatus": {
+      "ACTIVE": "ใช้งาน",
+      "INACTIVE": "ไม่ใช้งาน",
+      "PROSPECT": "ลูกค้าเป้าหมาย"
+    },
+    "taskStatus": {
+      "TODO": "รอทำ",
+      "IN_PROGRESS": "กำลังดำเนินการ",
+      "DONE": "เสร็จแล้ว",
+      "CANCELLED": "ยกเลิก"
+    },
+    "role": {
+      "ADMIN": "ผู้ดูแลระบบ",
+      "LAWYER": "ทนายความ",
+      "STAFF": "เจ้าหน้าที่",
+      "VIEWER": "ผู้ดู"
+    },
+    "clientType": {
+      "INDIVIDUAL": "บุคคล",
+      "COMPANY": "นิติบุคคล"
+    },
+    "billingStatus": {
+      "DRAFT": "ร่าง",
+      "SENT": "ส่งแล้ว",
+      "PARTIALLY_PAID": "ชำระบางส่วน",
+      "PAID": "ชำระแล้ว",
+      "OVERDUE": "เกินกำหนด",
+      "CANCELLED": "ยกเลิก",
+      "WRITTEN_OFF": "ตัดหนี้สูญหรือไม่เรียกเก็บ"
+    }
+  }
+}

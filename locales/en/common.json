@@ -1,0 +1,139 @@
+{
+  "appTagline": "Law firm tracker",
+  "metadata": {
+    "description": "Lightweight law firm tracking for small firms"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "clients": "Clients",
+    "matters": "Matters",
+    "documents": "Documents",
+    "tasks": "Tasks",
+    "billing": "Billing",
+    "search": "Search",
+    "tags": "Tags",
+    "activity": "Activity",
+    "users": "Users",
+    "groups": "Groups",
+    "settings": "Settings",
+    "security": "Security",
+    "aiConnectors": "AI connectors",
+    "workflowStatuses": "Workflow statuses"
+  },
+  "confidentiality": {
+    "notice": "This system may contain confidential client and matter information. Access is logged. Do not share credentials or document links outside authorized firm workflows.",
+    "dismiss": "Dismiss for this session"
+  },
+  "language": {
+    "label": "Language",
+    "th": "ไทย",
+    "en": "English"
+  },
+  "signOut": "Sign out",
+  "auth": {
+    "signInTitle": "Sign in to your firm workspace",
+    "email": "Email",
+    "password": "Password",
+    "signIn": "Sign in",
+    "signingIn": "Signing in…",
+    "invalidCredentials": "Invalid email or password.",
+    "loading": "Loading…"
+  },
+  "edit": "Edit",
+  "cancel": "Cancel",
+  "saveChanges": "Save changes",
+  "saving": "Saving…",
+  "savedSuccessfully": "Saved successfully.",
+  "emptyValue": "—",
+  "overview": "Overview",
+  "activity": "Activity",
+  "tags": "Tags",
+  "name": "Name",
+  "status": "Status",
+  "notes": "Notes",
+  "email": "Email",
+  "phone": "Phone",
+  "address": "Address",
+  "company": "Company",
+  "title": "Title",
+  "client": "Client",
+  "matter": "Matter",
+  "assignee": "Assignee",
+  "provider": "Provider",
+  "active": "Active",
+  "inactive": "Inactive",
+  "archive": {
+    "default": "Archive",
+    "confirm": "Are you sure you want to {verb} this item? It will be soft-deleted and hidden from lists, not permanently removed."
+  },
+  "activityLog": {
+    "empty": "No activity recorded yet.",
+    "unknownActor": "Unknown user",
+    "immutableNotice": "Audit entries are append-only. They cannot be edited or deleted in the app (enforced in the database). Download a CSV copy for your records.",
+    "downloadCsv": "Download activity log (CSV)",
+    "exported": "Downloaded activity log export (CSV)",
+    "entryCount": "{count} entries shown (download for full export)",
+    "viewedClient": "Viewed client \"{name}\"",
+    "viewedMatter": "Viewed matter \"{name}\"",
+    "viewedDocument": "Viewed document link \"{name}\"",
+    "viewedTask": "Viewed task \"{name}\"",
+    "archived": "Archived {entity} \"{name}\" (soft-deleted)"
+  },
+  "search": {
+    "title": "Search",
+    "description": "Find clients, matters, and document links",
+    "placeholder": "Search by name, case number, tags, notes…",
+    "submit": "Search",
+    "clientsSection": "Clients ({count})",
+    "mattersSection": "Matters ({count})",
+    "documentsSection": "Documents ({count})",
+    "noClients": "No matching clients.",
+    "noMatters": "No matching matters.",
+    "noDocuments": "No matching documents."
+  },
+  "validation": {
+    "invalidInput": "Invalid input",
+    "invalidEmail": "Invalid email"
+  },
+  "error": {
+    "accessDenied": "Access denied"
+  },
+  "enum": {
+    "matterStatus": {
+      "OPEN": "Open",
+      "PENDING": "Pending",
+      "ON_HOLD": "On hold",
+      "CLOSED": "Closed"
+    },
+    "clientStatus": {
+      "ACTIVE": "Active",
+      "INACTIVE": "Inactive",
+      "PROSPECT": "Prospect"
+    },
+    "taskStatus": {
+      "TODO": "To do",
+      "IN_PROGRESS": "In progress",
+      "DONE": "Done",
+      "CANCELLED": "Cancelled"
+    },
+    "role": {
+      "ADMIN": "Admin",
+      "LAWYER": "Lawyer",
+      "STAFF": "Staff",
+      "VIEWER": "Viewer"
+    },
+    "clientType": {
+      "INDIVIDUAL": "Individual",
+      "COMPANY": "Company"
+    },
+    "billingStatus": {
+      "DRAFT": "Draft",
+      "SENT": "Sent",
+      "PARTIALLY_PAID": "Partially paid",
+      "PAID": "Paid",
+      "OVERDUE": "Overdue",
+      "CANCELLED": "Cancelled",
+      "WRITTEN_OFF": "Written off"
+    }
+  }
+}

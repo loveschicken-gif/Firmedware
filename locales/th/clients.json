@@ -1,0 +1,48 @@
+{
+  "title": "ลูกความ",
+  "description": "บุคคลและนิติบุคคลที่สำนักงานรับว่าความ",
+  "newClient": "เพิ่มลูกความ",
+  "newTitle": "เพิ่มลูกความ",
+  "newDescription": "เพิ่มข้อมูลลูกความหรือบริษัท",
+  "editTitle": "แก้ไขลูกความ",
+  "empty": "ไม่พบลูกความ",
+  "table": {
+    "name": "ชื่อ",
+    "company": "บริษัท",
+    "matters": "คดี/งาน"
+  },
+  "archive": "เก็บถาวรลูกความ",
+  "tab": {
+    "matters": "คดี/งาน ({count})",
+    "documents": "เอกสาร",
+    "tasks": "งานที่ต้องทำ"
+  },
+  "newMatter": "เพิ่มคดี/งาน",
+  "addDocumentLink": "เพิ่มอ้างอิงเอกสาร",
+  "form": {
+    "displayName": "ชื่อที่แสดง *",
+    "companyName": "ชื่อบริษัท",
+    "type": "ประเภท",
+    "typeIndividual": "บุคคล",
+    "typeCompany": "นิติบุคคล",
+    "status": "สถานะ",
+    "statusActive": "ใช้งาน",
+    "statusInactive": "ไม่ใช้งาน",
+    "statusProspect": "ลูกค้าเป้าหมาย",
+    "create": "สร้างลูกความ"
+  },
+  "validation": {
+    "displayNameRequired": "กรุณาระบุชื่อที่แสดง"
+  },
+  "error": {
+    "noPermissionCreate": "คุณไม่มีสิทธิ์สร้างลูกความ",
+    "noPermissionEdit": "คุณไม่มีสิทธิ์แก้ไขลูกความ",
+    "notFoundOrDenied": "ไม่พบลูกความหรือไม่มีสิทธิ์เข้าถึง",
+    "notFound": "ไม่พบลูกความ",
+    "noPermissionDelete": "คุณไม่มีสิทธิ์ลบลูกความ"
+  },
+  "activity": {
+    "created": "สร้างลูกความ \"{name}\"",
+    "updated": "อัปเดตลูกความ \"{name}\""
+  }
+}

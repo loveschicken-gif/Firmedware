@@ -1,0 +1,59 @@
+{
+  "title": "Tasks",
+  "description": "Deadlines grouped by weekly sprint",
+  "newTask": "New task",
+  "newTitle": "New task",
+  "editTitle": "Edit task",
+  "empty": "No tasks found.",
+  "filter": {
+    "all": "All",
+    "overdue": "Overdue",
+    "dueThisWeek": "Due this week"
+  },
+  "unscheduled": "Unscheduled",
+  "table": {
+    "due": "Due"
+  },
+  "archive": "Archive task",
+  "detail": {
+    "due": "Due",
+    "sprintWeek": "Sprint week",
+    "description": "Description"
+  },
+  "form": {
+    "title": "Title *",
+    "description": "Description",
+    "status": "Status",
+    "statusTodo": "To do",
+    "statusInProgress": "In progress",
+    "statusDone": "Done",
+    "statusCancelled": "Cancelled",
+    "dueDate": "Due date",
+    "deadlineType": "Deadline type",
+    "deadlineTypePlaceholder": "e.g. court, filing, client",
+    "sprintWeek": "Sprint week",
+    "autoSprint": "Auto-assign sprint from due date (when due date is set)",
+    "autoSprintHint": "Sprint week will be set to the Monday of the due date's week.",
+    "client": "Client",
+    "none": "None",
+    "assignee": "Assignee",
+    "unassigned": "Unassigned",
+    "create": "Create task"
+  },
+  "sprint": {
+    "label": "Sprint: {start} – {end}"
+  },
+  "validation": {
+    "titleRequired": "Title is required"
+  },
+  "error": {
+    "noPermissionCreate": "You do not have permission to create tasks.",
+    "noPermissionEdit": "You do not have permission to edit tasks.",
+    "notFoundOrDenied": "Task not found or access denied.",
+    "noPermissionDelete": "You do not have permission to delete tasks."
+  },
+  "activity": {
+    "created": "Created task \"{name}\"",
+    "updated": "Updated task \"{name}\""
+  }
+}

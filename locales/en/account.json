@@ -1,0 +1,57 @@
+{
+  "title": "Account",
+  "description": "Profile, security, and administration",
+  "profile": {
+    "title": "Profile",
+    "description": "Your display name and language preference",
+    "email": "Email",
+    "name": "Name",
+    "preferredLanguage": "Preferred language",
+    "save": "Save profile",
+    "saved": "Profile updated."
+  },
+  "security": {
+    "title": "Security",
+    "description": "Change your password regularly. Use a unique passphrase.",
+    "currentPassword": "Current password",
+    "newPassword": "New password",
+    "confirmPassword": "Confirm new password",
+    "save": "Change password",
+    "saved": "Password updated.",
+    "activity": {
+      "passwordChanged": "Changed own password"
+    }
+  },
+  "myActivity": {
+    "title": "Recent matter activity",
+    "description": "Audit entries for matters you are assigned to",
+    "empty": "No activity on your assigned matters yet."
+  },
+  "adminHub": {
+    "title": "Administration",
+    "description": "Manage firm access, groups, and settings",
+    "usersTitle": "Users",
+    "usersDescription": "Create accounts, assign roles, and deactivate members",
+    "groupsTitle": "Groups",
+    "groupsDescription": "Practice teams assigned to matters",
+    "activityTitle": "Activity log",
+    "activityDescription": "Firm-wide audit trail (admin only)",
+    "securityTitle": "Security settings",
+    "securityDescription": "Confidentiality notice, lockout, document permission checks",
+    "workflowTitle": "Workflow statuses",
+    "workflowDescription": "Matter and contract status labels",
+    "settingsTitle": "Firm settings",
+    "settingsDescription": "Firm name, timezone, language, and optional features"
+  },
+  "validation": {
+    "nameRequired": "Name is required",
+    "languageRequired": "Select a language",
+    "currentPasswordRequired": "Current password is required",
+    "passwordMin8": "Password must be at least 8 characters",
+    "passwordMismatch": "New passwords do not match"
+  },
+  "error": {
+    "userNotFound": "User not found.",
+    "currentPasswordInvalid": "Current password is incorrect."
+  }
+}

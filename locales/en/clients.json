@@ -1,0 +1,48 @@
+{
+  "title": "Clients",
+  "description": "Individuals and companies your firm represents",
+  "newClient": "New client",
+  "newTitle": "New client",
+  "newDescription": "Add a client or company record",
+  "editTitle": "Edit client",
+  "empty": "No clients found.",
+  "table": {
+    "name": "Name",
+    "company": "Company",
+    "matters": "Matters"
+  },
+  "archive": "Archive client",
+  "tab": {
+    "matters": "Matters ({count})",
+    "documents": "Documents",
+    "tasks": "Tasks"
+  },
+  "newMatter": "New matter",
+  "addDocumentLink": "Add document reference",
+  "form": {
+    "displayName": "Display name *",
+    "companyName": "Company name",
+    "type": "Type",
+    "typeIndividual": "Individual",
+    "typeCompany": "Company",
+    "status": "Status",
+    "statusActive": "Active",
+    "statusInactive": "Inactive",
+    "statusProspect": "Prospect",
+    "create": "Create client"
+  },
+  "validation": {
+    "displayNameRequired": "Display name is required"
+  },
+  "error": {
+    "noPermissionCreate": "You do not have permission to create clients.",
+    "noPermissionEdit": "You do not have permission to edit clients.",
+    "notFoundOrDenied": "Client not found or access denied.",
+    "notFound": "Client not found.",
+    "noPermissionDelete": "You do not have permission to delete clients."
+  },
+  "activity": {
+    "created": "Created client \"{name}\"",
+    "updated": "Updated client \"{name}\""
+  }
+}

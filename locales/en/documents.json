@@ -1,0 +1,111 @@
+{
+  "title": "Document references",
+  "description": "External URLs, local folder paths, and manual references to files (metadata only—no uploads)",
+  "addLink": "Add reference",
+  "newTitle": "Add document reference",
+  "editTitle": "Edit document reference",
+  "empty": "No document references found.",
+  "table": {
+    "provider": "Provider",
+    "referenceType": "Type",
+    "sensitivity": "Sensitivity"
+  },
+  "referenceType": {
+    "externalUrl": "External URL",
+    "localPath": "Local / manual path",
+    "manualReference": "Manual reference"
+  },
+  "sensitivity": {
+    "NORMAL": "Normal",
+    "CONFIDENTIAL": "Confidential",
+    "HIGHLY_CONFIDENTIAL": "Highly confidential",
+    "PRIVILEGED": "Privileged"
+  },
+  "archive": "Archive reference",
+  "detail": {
+    "referenceType": "Reference type",
+    "referenceValue": "Reference",
+    "externalLink": "External URL",
+    "folderPath": "Folder or file path",
+    "filePath": "File path",
+    "manualReference": "Manual reference",
+    "openLink": "Open link",
+    "openReference": "Open reference",
+    "copyPath": "Copy path",
+    "copyReference": "Copy reference",
+    "copiedPath": "Path copied",
+    "copiedReference": "Reference copied",
+    "openDocument": "Open document",
+    "openExternalAria": "Open external link"
+  },
+  "form": {
+    "client": "Client *",
+    "selectClient": "Select client",
+    "matterOptional": "Matter (optional)",
+    "noMatter": "No matter",
+    "title": "Title *",
+    "referenceType": "Reference type *",
+    "referenceTypeExternalUrl": "External URL",
+    "referenceTypeLocalPath": "Local / manual path",
+    "referenceTypeManualReference": "Manual reference",
+    "url": "URL *",
+    "urlPlaceholder": "https://drive.google.com/…",
+    "pathLabel": "Folder or file path *",
+    "pathPlaceholder": "\\\\OfficeServer\\ClientFiles\\Client Name\\Matter Name",
+    "manualLabel": "Manual reference *",
+    "manualPlaceholder": "Cabinet 2 / Drawer B / Archive Box 2025",
+    "storageProvider": "Storage provider",
+    "providerGoogleDrive": "Google Drive",
+    "providerOneDrive": "OneDrive",
+    "providerSharePoint": "SharePoint",
+    "providerDropbox": "Dropbox",
+    "providerLocalFolder": "Local shared folder",
+    "providerOther": "Other",
+    "providerName": "Provider name *",
+    "providerNamePlaceholder": "e.g. SharePoint, NetDocuments",
+    "addLink": "Add document reference",
+    "sensitivity": "Sensitivity level",
+    "permissionWarningExternal": "Firmedware stores only the link. Confirm that the external document permission is restricted to authorized users.",
+    "permissionWarningLocal": "Firmedware stores only this path as text. Make sure the folder or drive is accessible only to authorized firm users.",
+    "permissionWarningManual": "Manual references may still reveal confidential client or matter information. Avoid unnecessary sensitive detail.",
+    "helperLocalPath": "Firmedware stores this path as text only. It does not check whether the folder exists and does not access the file.",
+    "helperManualReference": "Use this for paper files, archive boxes, or offline storage references.",
+    "permissionConfirmLabel": "I confirm storage permissions or access controls are appropriate for authorized users only.",
+    "permissionConfirmRequired": "You must confirm permissions before saving."
+  },
+  "provider": {
+    "googleDrive": "Google Drive",
+    "oneDrive": "OneDrive",
+    "sharePoint": "SharePoint",
+    "dropbox": "Dropbox",
+    "localFolder": "Local folder",
+    "other": "Other"
+  },
+  "validation": {
+    "clientRequired": "Client is required",
+    "titleRequired": "Title is required",
+    "referenceRequired": "Reference value is required",
+    "urlRequired": "URL is required",
+    "urlInvalid": "Enter a valid http or https URL (e.g. https://… or www.example.com)",
+    "pathInvalid": "Enter a valid folder or file path (UNC, drive letter, or absolute path)",
+    "manualReferenceInvalid": "Enter a manual reference (text only)",
+    "providerInvalid": "Select a storage provider for external URLs",
+    "providerNameRequired": "Provider name is required when storage is Other",
+    "permissionConfirmRequired": "Confirm document permissions before saving."
+  },
+  "error": {
+    "matterNotFound": "Matter not found or access denied.",
+    "clientNotFound": "Client not found or access denied.",
+    "noPermissionAdd": "You do not have permission to add document references.",
+    "noPermissionEdit": "You do not have permission to edit document references.",
+    "notFoundOrDenied": "Document reference not found or access denied.",
+    "noPermissionDelete": "You do not have permission to delete document references."
+  },
+  "activity": {
+    "created": "Document reference created \"{name}\"",
+    "added": "Added document reference \"{name}\"",
+    "updated": "Document reference updated \"{name}\"",
+    "pathCopied": "Local path copied for \"{name}\"",
+    "referenceCopied": "Manual reference copied for \"{name}\""
+  }
+}

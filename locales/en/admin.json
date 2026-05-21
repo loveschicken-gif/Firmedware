@@ -1,0 +1,187 @@
+{
+  "users": {
+    "title": "Users",
+    "description": "Manage firm members and roles",
+    "newUser": "New user",
+    "newTitle": "New user",
+    "editTitle": "Edit user",
+    "table": {
+      "email": "Email",
+      "role": "Role"
+    },
+    "form": {
+      "name": "Name",
+      "role": "Role",
+      "roleAdmin": "Admin",
+      "roleLawyer": "Lawyer",
+      "roleStaff": "Staff",
+      "roleViewer": "Viewer",
+      "password": "Password",
+      "passwordEdit": "New password (leave blank to keep)",
+      "preferredLanguage": "Preferred language",
+      "create": "Create user",
+      "save": "Save"
+    }
+  },
+  "groups": {
+    "title": "User groups",
+    "description": "Teams that can be assigned to matters with labels and directory paths",
+    "newGroup": "New group",
+    "newTitle": "New group",
+    "editTitle": "Edit group",
+    "empty": "No groups yet.",
+    "table": {
+      "members": "Members",
+      "matters": "Matters"
+    },
+    "form": {
+      "name": "Group name *",
+      "description": "Description",
+      "members": "Members (active users)",
+      "create": "Create group",
+      "save": "Save"
+    }
+  },
+  "settings": {
+    "title": "Firm settings",
+    "description": "Configure your firm name, timezone, and default language",
+    "firmName": "Firm name",
+    "firmNameHint": "Shown in the sidebar and application header.",
+    "timezone": "Timezone",
+    "timezoneHint": "IANA timezone (e.g. Asia/Bangkok). Used for date display defaults.",
+    "defaultLanguage": "Default language",
+    "defaultLanguageHint": "Used for new users and when no personal preference is set.",
+    "featuresTitle": "Optional features",
+    "enableEntityNotes": "Entity notes fields",
+    "enableEntityNotesHint": "Show notes on clients, matters, and document links. Disable to keep metadata-only records.",
+    "enableComments": "Comments module (extension point)",
+    "enableCommentsHint": "Shows a placeholder on matter pages. Implement comment threads in your fork — not included in core.",
+    "enableBilling": "Billing & payment tracking",
+    "enableBillingHint": "Invoice metadata, external invoice links, and payment status. Does not process payments or replace accounting software.",
+    "saved": "Settings saved.",
+    "save": "Save settings"
+  },
+  "tags": {
+    "title": "Tags",
+    "description": "Organize clients, matters, and documents with labels",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Tag name",
+      "color": "Color (hex)",
+      "colorPlaceholder": "#2563eb"
+    },
+    "add": "Add tag",
+    "created": "Tag created."
+  },
+  "activity": {
+    "title": "Activity",
+    "description": "Firm-wide audit trail (admin only)",
+    "userCreated": "Created user \"{name}\" ({role})",
+    "userUpdated": "Updated user \"{name}\"",
+    "groupCreated": "Created user group \"{name}\"",
+    "groupUpdated": "Updated user group \"{name}\"",
+    "tagCreated": "Created tag \"{name}\""
+  },
+  "validation": {
+    "firmNameRequired": "Firm name is required",
+    "timezoneRequired": "Timezone is required",
+    "defaultLanguageRequired": "Default language is required",
+    "passwordMin8": "Password must be at least 8 characters",
+    "groupNameRequired": "Name is required"
+  },
+  "aiConnectors": {
+    "title": "AI connectors",
+    "description": "Optional AI Connector Gateway — disabled by default; policy checks only in this version",
+    "warningTitle": "Confidentiality and privilege",
+    "warningDisabled": "AI connectors are disabled by default.",
+    "warningNoKeys": "No provider API keys are stored in the database.",
+    "warningNoCalls": "No AI provider HTTP calls are made in this version.",
+    "warningConfidential": "Client confidential information and privileged communications must not be sent to AI tools unless approved by firm policy.",
+    "warningLinks": "External document links and local paths are blocked by default.",
+    "enableLabel": "Enable AI connectors (firm policy required)",
+    "enableHint": "When off, policy-check API returns blocked. Does not enable provider calls.",
+    "modeLabel": "Connector mode",
+    "modeHint": "Restricts what data classes may be included in future AI requests.",
+    "providerLabel": "Preferred provider (metadata only)",
+    "providerNone": "None selected",
+    "providerHint": "For planning only. API keys belong in environment variables or a secret manager — never in the database.",
+    "otherLabel": "Other provider label",
+    "otherPlaceholder": "e.g. firm-hosted endpoint",
+    "saved": "AI connector settings saved.",
+    "save": "Save AI connector settings"
+  },
+  "security": {
+    "title": "Security settings",
+    "description": "Confidentiality notice, document permission checks, and login lockout",
+    "confidentialityNotice": "Show confidentiality notice in app",
+    "confidentialityNoticeHint": "Displayed after login and in the app shell until dismissed for the session.",
+    "requirePermissionConfirm": "Require permission confirmation for document links",
+    "requirePermissionConfirmHint": "Users must confirm external DMS permissions when creating or editing links.",
+    "lockoutThreshold": "Failed login attempts before lockout",
+    "lockoutMinutes": "Lockout duration (minutes)",
+    "saved": "Security settings saved.",
+    "save": "Save security settings",
+    "activity": {
+      "settingsUpdated": "Updated firm security settings",
+      "userDeactivated": "Deactivated user \"{name}\"",
+      "roleChanged": "Changed role for \"{name}\" from {from} to {to}",
+      "passwordReset": "Admin reset password for \"{name}\""
+    },
+    "validation": {
+      "lockoutThresholdMin": "Threshold must be at least 1",
+      "lockoutThresholdMax": "Threshold cannot exceed 50",
+      "lockoutMinutesMin": "Duration must be at least 1 minute",
+      "lockoutMinutesMax": "Duration cannot exceed 1440 minutes"
+    }
+  },
+  "workflow": {
+    "title": "Workflow statuses",
+    "description": "Customize matter, task, document, and contract workflow labels",
+    "newStatus": "New status",
+    "newTitle": "New workflow status",
+    "editTitle": "Edit workflow status",
+    "edit": "Edit",
+    "deactivate": "Deactivate",
+    "table": {
+      "entity": "Entity",
+      "name": "Key",
+      "label": "Label",
+      "order": "Order",
+      "flags": "Flags"
+    },
+    "flag": {
+      "default": "default",
+      "final": "final",
+      "inactive": "inactive"
+    },
+    "form": {
+      "entityType": "Entity type",
+      "name": "Key (slug)",
+      "nameHint": "Lowercase letters, numbers, and underscores only. Cannot change after create.",
+      "labelEn": "English label",
+      "labelTh": "Thai label",
+      "color": "Color (hex)",
+      "sortOrder": "Sort order",
+      "isDefault": "Default status for new records",
+      "isFinal": "Final / closed status",
+      "active": "Active",
+      "create": "Create status"
+    },
+    "activity": {
+      "created": "Created workflow status \"{name}\"",
+      "updated": "Updated workflow status \"{name}\"",
+      "deactivated": "Deactivated workflow status \"{name}\""
+    },
+    "validation": {
+      "nameRequired": "Key is required",
+      "nameFormat": "Use lowercase letters, numbers, and underscores only",
+      "labelEnRequired": "English label is required"
+    }
+  },
+  "error": {
+    "emailInUse": "Email already in use.",
+    "groupNameExists": "Group name already exists.",
+    "invalidTagName": "Invalid tag name.",
+    "tagNameExists": "Tag name already exists."
+  }
+}

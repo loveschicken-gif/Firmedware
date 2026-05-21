@@ -1,0 +1,495 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum Role {
+  ADMIN
+  LAWYER
+  STAFF
+  VIEWER
+}
+
+enum ClientType {
+  INDIVIDUAL
+  COMPANY
+}
+
+enum ClientStatus {
+  ACTIVE
+  INACTIVE
+  PROSPECT
+}
+
+enum MatterStatus {
+  OPEN
+  PENDING
+  CLOSED
+  ON_HOLD
+}
+
+enum MatterVisibility {
+  ASSIGNED_ONLY
+  ALL
+}
+
+enum TaskStatus {
+  TODO
+  IN_PROGRESS
+  DONE
+  CANCELLED
+}
+
+enum DocumentProvider {
+  GOOGLE_DRIVE
+  ONEDRIVE
+  SHAREPOINT
+  DROPBOX
+  LOCAL_FOLDER
+  OTHER
+}
+
+enum ActivityAction {
+  CREATE
+  UPDATE
+  DELETE
+  VIEW
+}
+
+enum EntityType {
+  USER
+  CLIENT
+  MATTER
+  DOCUMENT_LINK
+  TASK
+  TAG
+  USER_GROUP
+  FIRM_SETTINGS
+  BILLING_RECORD
+}
+
+enum ActivityCategory {
+  DATA
+  AUTH
+  SECURITY
+  ADMIN
+  DOCUMENT
+}
+
+enum WorkflowEntityType {
+  MATTER
+  TASK
+  DOCUMENT_LINK
+  CONTRACT
+}
+
+enum DocumentSensitivity {
+  NORMAL
+  CONFIDENTIAL
+  HIGHLY_CONFIDENTIAL
+  PRIVILEGED
+}
+
+enum DocumentReferenceType {
+  EXTERNAL_URL
+  LOCAL_PATH
+  MANUAL_REFERENCE
+}
+
+model FirmSettings {
+  id                              String           @id @default("default")
+  firmName                        String           @default("Firmedware")
+  timezone                        String           @default("Asia/Bangkok")
+  defaultLanguage                 String           @default("th")
+  defaultMatterVisibility         MatterVisibility @default(ASSIGNED_ONLY)
+  enableEntityNotes               Boolean          @default(true)
+  enableComments                  Boolean          @default(false)
+  enableBilling                   Boolean          @default(false)
+  confidentialityNoticeEnabled    Boolean          @default(true)
+  requireDocumentPermissionConfirm Boolean         @default(true)
+  failedLoginLockoutThreshold     Int              @default(5)
+  failedLoginLockoutMinutes       Int              @default(30)
+  enableAIConnectors              Boolean          @default(false)
+  aiConnectorMode                 String           @default("DISABLED")
+  aiConnectorProvider             String?
+  createdAt                       DateTime         @default(now())
+  updatedAt                       DateTime         @updatedAt
+}
+
+model User {
+  id                String    @id @default(cuid())
+  email             String    @unique
+  passwordHash      String
+  name              String
+  role              Role      @default(STAFF)
+  active            Boolean   @default(true)
+  preferredLanguage String    @default("th")
+  lastLoginAt       DateTime?
+  lastFailedLoginAt DateTime?
+  failedLoginCount  Int       @default(0)
+  passwordChangedAt DateTime?
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+
+  matterAssignments MatterAssignment[]
+  groupMemberships  UserGroupMember[]
+  assignedTasks     Task[]             @relation("TaskAssignee")
+  activityLogs      ActivityLog[]
+
+  clientsCreated       Client[]       @relation("ClientCreatedBy")
+  clientsUpdated       Client[]       @relation("ClientUpdatedBy")
+  clientsDeleted       Client[]       @relation("ClientDeletedBy")
+  mattersCreated       Matter[]       @relation("MatterCreatedBy")
+  mattersUpdated       Matter[]       @relation("MatterUpdatedBy")
+  mattersDeleted       Matter[]       @relation("MatterDeletedBy")
+  documentsCreated     DocumentLink[] @relation("DocumentCreatedBy")
+  documentsUpdated     DocumentLink[] @relation("DocumentUpdatedBy")
+  documentsDeleted     DocumentLink[] @relation("DocumentDeletedBy")
+  tasksCreated         Task[]         @relation("TaskCreatedBy")
+  tasksUpdated         Task[]         @relation("TaskUpdatedBy")
+  tasksDeleted         Task[]         @relation("TaskDeletedBy")
+  groupsCreated        UserGroup[]    @relation("GroupCreatedBy")
+  groupsUpdated        UserGroup[]    @relation("GroupUpdatedBy")
+  groupsDeleted        UserGroup[]    @relation("GroupDeletedBy")
+  tagsCreated          Tag[]          @relation("TagCreatedBy")
+  tagsUpdated          Tag[]          @relation("TagUpdatedBy")
+  tagsDeleted          Tag[]          @relation("TagDeletedBy")
+  billingCreated       BillingRecord[] @relation("BillingCreatedBy")
+  billingUpdated       BillingRecord[] @relation("BillingUpdatedBy")
+  billingDeleted       BillingRecord[] @relation("BillingDeletedBy")
+}
+
+model UserGroup {
+  id          String    @id @default(cuid())
+  name        String    @unique
+  description String?
+  active      Boolean   @default(true)
+  deletedAt   DateTime?
+  deletedById String?
+  createdById String?
+  updatedById String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  members     UserGroupMember[]
+  matterLinks MatterGroupAssignment[]
+
+  createdBy User? @relation("GroupCreatedBy", fields: [createdById], references: [id], onDelete: SetNull)
+  updatedBy User? @relation("GroupUpdatedBy", fields: [updatedById], references: [id], onDelete: SetNull)
+  deletedBy User? @relation("GroupDeletedBy", fields: [deletedById], references: [id], onDelete: SetNull)
+
+  @@index([deletedAt])
+}
+
+model UserGroupMember {
+  groupId String
+  userId  String
+
+  group UserGroup @relation(fields: [groupId], references: [id], onDelete: Cascade)
+  user  User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([groupId, userId])
+  @@index([userId])
+}
+
+model Client {
+  id          String       @id @default(cuid())
+  displayName String
+  companyName String?
+  clientType  ClientType   @default(INDIVIDUAL)
+  email       String?
+  phone       String?
+  address     String?
+  status      ClientStatus @default(ACTIVE)
+  notes       String?
+  deletedAt   DateTime?
+  deletedById String?
+  createdById String?
+  updatedById String?
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+
+  matters       Matter[]
+  documentLinks DocumentLink[]
+  tasks         Task[]
+  billingRecords BillingRecord[]
+  tags          ClientTag[]
+
+  createdBy User? @relation("ClientCreatedBy", fields: [createdById], references: [id], onDelete: SetNull)
+  updatedBy User? @relation("ClientUpdatedBy", fields: [updatedById], references: [id], onDelete: SetNull)
+  deletedBy User? @relation("ClientDeletedBy", fields: [deletedById], references: [id], onDelete: SetNull)
+
+  @@index([displayName])
+  @@index([companyName])
+  @@index([status])
+  @@index([deletedAt])
+}
+
+model WorkflowStatus {
+  id         String             @id @default(cuid())
+  entityType WorkflowEntityType
+  name       String
+  labelTh    String?
+  labelEn    String?
+  color      String?
+  sortOrder  Int                @default(0)
+  isDefault  Boolean            @default(false)
+  isFinal    Boolean            @default(false)
+  active     Boolean            @default(true)
+  createdAt  DateTime           @default(now())
+  updatedAt  DateTime           @updatedAt
+
+  matters Matter[]
+
+  @@unique([entityType, name])
+  @@index([entityType, active, sortOrder])
+}
+
+model Matter {
+  id         String       @id @default(cuid())
+  clientId   String
+  title      String
+  caseNumber String?
+  status     MatterStatus @default(OPEN)
+  statusId   String?
+  notes      String?
+  openedAt   DateTime     @default(now())
+  closedAt   DateTime?
+  deletedAt  DateTime?
+  deletedById String?
+  createdById String?
+  updatedById String?
+  createdAt  DateTime     @default(now())
+  updatedAt  DateTime     @updatedAt
+
+  client         Client                  @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  workflowStatus WorkflowStatus?         @relation(fields: [statusId], references: [id], onDelete: SetNull)
+  assignments    MatterAssignment[]
+  groupAssignments MatterGroupAssignment[]
+  documentLinks  DocumentLink[]
+  tasks          Task[]
+  billingRecords BillingRecord[]
+  tags           MatterTag[]
+
+  createdBy User? @relation("MatterCreatedBy", fields: [createdById], references: [id], onDelete: SetNull)
+  updatedBy User? @relation("MatterUpdatedBy", fields: [updatedById], references: [id], onDelete: SetNull)
+  deletedBy User? @relation("MatterDeletedBy", fields: [deletedById], references: [id], onDelete: SetNull)
+
+  @@index([clientId])
+  @@index([title])
+  @@index([caseNumber])
+  @@index([status])
+  @@index([statusId])
+  @@index([deletedAt])
+}
+
+model MatterAssignment {
+  id        String   @id @default(cuid())
+  matterId  String
+  userId    String
+  createdAt DateTime @default(now())
+
+  matter Matter @relation(fields: [matterId], references: [id], onDelete: Cascade)
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([matterId, userId])
+  @@index([userId])
+}
+
+model MatterGroupAssignment {
+  id            String   @id @default(cuid())
+  matterId      String
+  groupId       String
+  label         String
+  directoryPath String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  matter Matter    @relation(fields: [matterId], references: [id], onDelete: Cascade)
+  group  UserGroup @relation(fields: [groupId], references: [id], onDelete: Cascade)
+
+  @@unique([matterId, groupId])
+  @@index([groupId])
+}
+
+model DocumentLink {
+  id            String           @id @default(cuid())
+  clientId      String
+  matterId      String?
+  title         String
+  url           String
+  referenceType DocumentReferenceType @default(EXTERNAL_URL)
+  provider      DocumentProvider     @default(OTHER)
+  providerLabel String?
+  sensitivity   DocumentSensitivity  @default(NORMAL)
+  notes         String?
+  deletedAt     DateTime?
+  deletedById   String?
+  createdById   String?
+  updatedById   String?
+  createdAt     DateTime         @default(now())
+  updatedAt     DateTime         @updatedAt
+
+  client Client  @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  matter Matter? @relation(fields: [matterId], references: [id], onDelete: SetNull)
+  tags   DocumentTag[]
+
+  createdBy User? @relation("DocumentCreatedBy", fields: [createdById], references: [id], onDelete: SetNull)
+  updatedBy User? @relation("DocumentUpdatedBy", fields: [updatedById], references: [id], onDelete: SetNull)
+  deletedBy User? @relation("DocumentDeletedBy", fields: [deletedById], references: [id], onDelete: SetNull)
+
+  @@index([clientId])
+  @@index([matterId])
+  @@index([title])
+  @@index([deletedAt])
+}
+
+model Task {
+  id              String     @id @default(cuid())
+  title           String
+  description     String?
+  status          TaskStatus @default(TODO)
+  dueAt           DateTime?
+  deadlineType    String?
+  sprintWeekStart DateTime?
+  clientId        String?
+  matterId        String?
+  assigneeId      String?
+  deletedAt       DateTime?
+  deletedById     String?
+  createdById     String?
+  updatedById     String?
+  createdAt       DateTime   @default(now())
+  updatedAt       DateTime   @updatedAt
+
+  client   Client? @relation(fields: [clientId], references: [id], onDelete: SetNull)
+  matter   Matter? @relation(fields: [matterId], references: [id], onDelete: SetNull)
+  assignee User?   @relation("TaskAssignee", fields: [assigneeId], references: [id], onDelete: SetNull)
+
+  createdBy User? @relation("TaskCreatedBy", fields: [createdById], references: [id], onDelete: SetNull)
+  updatedBy User? @relation("TaskUpdatedBy", fields: [updatedById], references: [id], onDelete: SetNull)
+  deletedBy User? @relation("TaskDeletedBy", fields: [deletedById], references: [id], onDelete: SetNull)
+
+  @@index([dueAt])
+  @@index([sprintWeekStart])
+  @@index([status])
+  @@index([assigneeId])
+  @@index([matterId])
+  @@index([clientId])
+  @@index([deletedAt])
+}
+
+model Tag {
+  id          String    @id @default(cuid())
+  name        String    @unique
+  color       String?
+  deletedAt   DateTime?
+  deletedById String?
+  createdById String?
+  updatedById String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  clients   ClientTag[]
+  matters   MatterTag[]
+  documents DocumentTag[]
+
+  createdBy User? @relation("TagCreatedBy", fields: [createdById], references: [id], onDelete: SetNull)
+  updatedBy User? @relation("TagUpdatedBy", fields: [updatedById], references: [id], onDelete: SetNull)
+  deletedBy User? @relation("TagDeletedBy", fields: [deletedById], references: [id], onDelete: SetNull)
+
+  @@index([deletedAt])
+}
+
+model ClientTag {
+  clientId String
+  tagId    String
+
+  client Client @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  tag    Tag    @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@id([clientId, tagId])
+}
+
+model MatterTag {
+  matterId String
+  tagId    String
+
+  matter Matter @relation(fields: [matterId], references: [id], onDelete: Cascade)
+  tag    Tag    @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@id([matterId, tagId])
+}
+
+model DocumentTag {
+  documentId String
+  tagId      String
+
+  document DocumentLink @relation(fields: [documentId], references: [id], onDelete: Cascade)
+  tag      Tag          @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@id([documentId, tagId])
+}
+
+/// Append-only audit trail. UPDATE/DELETE blocked at database level (see migration).
+model ActivityLog {
+  id         String         @id @default(cuid())
+  userId     String
+  actorName  String
+  actorEmail String
+  entityType EntityType
+  entityId   String
+  category   ActivityCategory @default(DATA)
+  action     ActivityAction
+  summary    String
+  metadata   Json?
+  createdAt  DateTime       @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Restrict)
+
+  @@index([createdAt])
+  @@index([category])
+  @@index([entityType, entityId])
+  @@index([userId])
+}
+
+model BillingRecord {
+  id            String    @id @default(cuid())
+  clientId      String
+  matterId      String?
+  invoiceNumber String?
+  title         String
+  description   String?
+  amount        Decimal   @db.Decimal(18, 2)
+  currency      String    @default("THB")
+  issueDate     DateTime?
+  dueDate       DateTime?
+  paidAt        DateTime?
+  status        String    @default("DRAFT")
+  externalLink  String?
+  notes         String?
+  deletedAt     DateTime?
+  deletedById   String?
+  createdById   String?
+  updatedById   String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  client Client  @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  matter Matter? @relation(fields: [matterId], references: [id], onDelete: SetNull)
+
+  createdBy User? @relation("BillingCreatedBy", fields: [createdById], references: [id], onDelete: SetNull)
+  updatedBy User? @relation("BillingUpdatedBy", fields: [updatedById], references: [id], onDelete: SetNull)
+  deletedBy User? @relation("BillingDeletedBy", fields: [deletedById], references: [id], onDelete: SetNull)
+
+  @@index([clientId])
+  @@index([matterId])
+  @@index([status])
+  @@index([dueDate])
+  @@index([deletedAt])
+}
+
+// Future v2: UploadedDocument for optional PDF upload module

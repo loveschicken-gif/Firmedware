@@ -1,0 +1,68 @@
+{
+  "title": "คดี/งาน",
+  "description": "คดีและงานกฎหมายที่สำนักงานติดตาม",
+  "newMatter": "เพิ่มคดี/งาน",
+  "newTitle": "เพิ่มคดี/งาน",
+  "newDescription": "เปิดคดีหรืองานกฎหมายใหม่",
+  "editTitle": "แก้ไขคดี/งาน",
+  "empty": "ไม่พบคดี/งาน",
+  "emptyHint": "จะเห็นคดี/งานเมื่อได้รับมอบหมาย (หรืออยู่ในกลุ่มที่มอบหมาย) เมื่อสร้างคดี/งาน ให้เลือกตัวเองในรายชื่อผู้รับมอบหมาย",
+  "table": {
+    "title": "หัวข้อ",
+    "caseNumber": "เลขคดี",
+    "assigned": "ผู้รับมอบหมาย"
+  },
+  "archive": "เก็บถาวรคดี/งาน",
+  "tab": {
+    "documents": "เอกสาร",
+    "tasks": "งานที่ต้องทำ"
+  },
+  "detail": {
+    "opened": "เปิดเมื่อ",
+    "closed": "ปิดเมื่อ",
+    "assignedUsers": "ผู้ใช้ที่มอบหมาย",
+    "assignedGroups": "กลุ่มที่มอบหมาย"
+  },
+  "comments": {
+    "placeholderTitle": "ความคิดเห็น (จุดขยาย)",
+    "placeholderDescription": "ระบบความคิดเห็นไม่รวมในแกนหลักของ Firmedware — พัฒนาโมเดล Comment ใน fork เมื่อต้องการสนทนาในคดี/งาน เก็บงานทนายความใน DMS ที่มีสิทธิ์ชัดเจน"
+  },
+  "addDocumentLink": "เพิ่มอ้างอิงเอกสาร",
+  "form": {
+    "client": "ลูกความ *",
+    "selectClient": "เลือกลูกความ",
+    "title": "หัวข้อ *",
+    "caseNumber": "เลขคดี",
+    "status": "สถานะ",
+    "statusOpen": "เปิด",
+    "statusPending": "รอดำเนินการ",
+    "statusOnHold": "พักไว้",
+    "statusClosed": "ปิด",
+    "opened": "วันที่เปิด",
+    "closedDate": "วันที่ปิด",
+    "assignedUsers": "ผู้ใช้ที่มอบหมาย (บัญชีที่ใช้งาน)",
+    "assignedGroups": "กลุ่มที่มอบหมาย",
+    "create": "สร้างคดี/งาน"
+  },
+  "groups": {
+    "none": "ไม่มีกลุ่มที่ใช้งาน ผู้ดูแลระบบสามารถสร้างกลุ่มได้ที่ ตั้งค่า → กลุ่มผู้ใช้งาน",
+    "labelOnMatter": "ชื่อบนคดี/งาน",
+    "directoryPath": "เส้นทางโฟลเดอร์ (ไม่บังคับ)",
+    "directoryPlaceholder": "เช่น /Shared/Matter-123/Litigation"
+  },
+  "validation": {
+    "clientRequired": "กรุณาเลือกลูกความ",
+    "titleRequired": "กรุณาระบุหัวข้อ"
+  },
+  "error": {
+    "noPermissionCreate": "คุณไม่มีสิทธิ์สร้างคดี/งาน",
+    "noPermissionEdit": "คุณไม่มีสิทธิ์แก้ไขคดี/งาน",
+    "notFoundOrDenied": "ไม่พบคดี/งานหรือไม่มีสิทธิ์เข้าถึง",
+    "notFound": "ไม่พบคดี/งาน",
+    "noPermissionDelete": "คุณไม่มีสิทธิ์ลบคดี/งาน"
+  },
+  "activity": {
+    "created": "สร้างคดี/งาน \"{name}\"",
+    "updated": "อัปเดตคดี/งาน \"{name}\""
+  }
+}

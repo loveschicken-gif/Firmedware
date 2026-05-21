@@ -1,0 +1,78 @@
+{
+  "title": "Billing",
+  "description": "Invoice metadata and payment status tracking — not accounting software. Links open external invoices in your browser.",
+  "entityLabel": "billing record",
+  "newRecord": "New billing record",
+  "addRecord": "Add billing record",
+  "archive": "Archive billing record",
+  "empty": "No billing records yet.",
+  "notEnabled": "Billing module is disabled. Enable it under Admin → Firm settings.",
+  "table": {
+    "invoiceNumber": "Invoice #",
+    "amount": "Amount",
+    "dueDate": "Due date"
+  },
+  "detail": {
+    "invoiceNumber": "Invoice number",
+    "amount": "Amount",
+    "currency": "Currency",
+    "issueDate": "Issue date",
+    "dueDate": "Due date",
+    "paidAt": "Paid at",
+    "externalLink": "External invoice link",
+    "openExternal": "Open invoice",
+    "openExternalAria": "Open external invoice in new tab",
+    "description": "Description",
+    "disclaimer": "This record tracks invoice metadata and payment status only. It does not process payments or replace your firm's accounting system."
+  },
+  "form": {
+    "client": "Client",
+    "selectClient": "Select client",
+    "matter": "Matter (optional)",
+    "noMatter": "Client-level (no matter)",
+    "invoiceNumber": "Invoice number",
+    "title": "Title",
+    "description": "Description",
+    "amount": "Amount",
+    "currency": "Currency",
+    "issueDate": "Issue date",
+    "dueDate": "Due date",
+    "paidAt": "Paid at",
+    "status": "Status",
+    "externalLink": "External invoice URL",
+    "externalLinkHint": "Link to invoice in your accounting or document system (optional).",
+    "notes": "Notes",
+    "create": "Create billing record",
+    "save": "Save billing record"
+  },
+  "validation": {
+    "clientRequired": "Client is required",
+    "titleRequired": "Title is required",
+    "amountRequired": "Amount is required",
+    "amountInvalid": "Enter a valid positive amount",
+    "currencyRequired": "Currency is required",
+    "statusInvalid": "Invalid status",
+    "externalLinkInvalid": "Enter a valid http(s) URL",
+    "paidAtRequiresPaidStatus": "Paid date applies when status is Paid or Partially paid"
+  },
+  "error": {
+    "noPermissionCreate": "You do not have permission to create billing records.",
+    "noPermissionEdit": "You do not have permission to edit billing records.",
+    "noPermissionDelete": "Only administrators can archive billing records.",
+    "notFoundOrDenied": "Billing record not found or access denied.",
+    "notFound": "Billing record not found.",
+    "matterNotFound": "Matter not found or access denied.",
+    "clientNotFound": "Client not found or access denied."
+  },
+  "activity": {
+    "created": "Created billing record \"{name}\"",
+    "updated": "Updated billing record \"{name}\"",
+    "statusChanged": "Changed billing status for \"{name}\" from {from} to {to}",
+    "viewed": "Viewed billing record \"{name}\""
+  },
+  "section": {
+    "title": "Billing",
+    "empty": "No billing records for this record.",
+    "viewAll": "View all billing →"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "title": "งานที่ต้องทำ",
+  "description": "กำหนดส่งจัดกลุ่มตามสัปดาห์งาน",
+  "newTask": "เพิ่มงาน",
+  "newTitle": "เพิ่มงาน",
+  "editTitle": "แก้ไขงาน",
+  "empty": "ไม่พบงาน",
+  "filter": {
+    "all": "ทั้งหมด",
+    "overdue": "เลยกำหนด",
+    "dueThisWeek": "ครบกำหนดสัปดาห์นี้"
+  },
+  "unscheduled": "ยังไม่กำหนด",
+  "table": {
+    "due": "ครบกำหนด"
+  },
+  "archive": "เก็บถาวรงาน",
+  "detail": {
+    "due": "ครบกำหนด",
+    "sprintWeek": "สัปดาห์งาน",
+    "description": "รายละเอียด"
+  },
+  "form": {
+    "title": "หัวข้อ *",
+    "description": "รายละเอียด",
+    "status": "สถานะ",
+    "statusTodo": "รอทำ",
+    "statusInProgress": "กำลังดำเนินการ",
+    "statusDone": "เสร็จแล้ว",
+    "statusCancelled": "ยกเลิก",
+    "dueDate": "วันครบกำหนด",
+    "sprintWeek": "สัปดาห์งาน",
+    "autoSprint": "กำหนดสัปดาห์งานอัตโนมัติจากวันครบกำหนด",
+    "autoSprintHint": "สัปดาห์งานจะตั้งเป็นวันจันทร์ของสัปดาห์ที่ครบกำหนด",
+    "client": "ลูกความ",
+    "none": "ไม่ระบุ",
+    "assignee": "ผู้รับผิดชอบ",
+    "unassigned": "ยังไม่มอบหมาย",
+    "create": "สร้างงาน"
+  },
+  "sprint": {
+    "label": "สัปดาห์งาน: {start} – {end}"
+  },
+  "validation": {
+    "titleRequired": "กรุณาระบุหัวข้อ"
+  },
+  "error": {
+    "noPermissionCreate": "คุณไม่มีสิทธิ์สร้างงาน",
+    "noPermissionEdit": "คุณไม่มีสิทธิ์แก้ไขงาน",
+    "notFoundOrDenied": "ไม่พบงานหรือไม่มีสิทธิ์เข้าถึง",
+    "noPermissionDelete": "คุณไม่มีสิทธิ์ลบงาน"
+  },
+  "activity": {
+    "created": "สร้างงาน \"{name}\"",
+    "updated": "อัปเดตงาน \"{name}\""
+  }
+}

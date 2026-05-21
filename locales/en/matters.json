@@ -1,0 +1,70 @@
+{
+  "title": "Matters",
+  "description": "Cases and legal matters tracked by your firm",
+  "newMatter": "New matter",
+  "newTitle": "New matter",
+  "newDescription": "Open a new case or legal matter",
+  "editTitle": "Edit matter",
+  "empty": "No matters found.",
+  "emptyHint": "Matters only appear if you are assigned (or in an assigned group). When creating a matter, include yourself under Assigned users.",
+  "table": {
+    "title": "Title",
+    "caseNumber": "Case #",
+    "assigned": "Assigned"
+  },
+  "archive": "Archive matter",
+  "tab": {
+    "documents": "Documents",
+    "tasks": "Tasks"
+  },
+  "detail": {
+    "opened": "Opened",
+    "closed": "Closed",
+    "assignedUsers": "Assigned users",
+    "assignedGroups": "Assigned groups"
+  },
+  "comments": {
+    "placeholderTitle": "Comments (extension point)",
+    "placeholderDescription": "Comment threads are not included in Firmedware core. Implement a Comment model in your fork when your firm needs matter discussions — keep attorney work product in your DMS where permissions are enforced."
+  },
+  "addDocumentLink": "Add document reference",
+  "form": {
+    "client": "Client *",
+    "selectClient": "Select client",
+    "title": "Title *",
+    "caseNumber": "Case number",
+    "status": "Status",
+    "statusOpen": "Open",
+    "statusPending": "Pending",
+    "statusOnHold": "On hold",
+    "statusClosed": "Closed",
+    "opened": "Opened",
+    "closedDate": "Closed date",
+    "assignedUsers": "Assigned users (active accounts)",
+    "assignedGroups": "Assigned groups",
+    "create": "Create matter"
+  },
+  "groups": {
+    "none": "No active groups. An admin can create groups under Admin → Groups.",
+    "labelOnMatter": "Label on matter",
+    "directoryPath": "Directory path (optional)",
+    "directoryPlaceholder": "e.g. /Shared/Matter-123/Litigation"
+  },
+  "validation": {
+    "clientRequired": "Client is required",
+    "statusRequired": "Workflow status is required",
+    "titleRequired": "Title is required"
+  },
+  "error": {
+    "noPermissionCreate": "You do not have permission to create matters.",
+    "noPermissionEdit": "You do not have permission to edit matters.",
+    "notFoundOrDenied": "Matter not found or access denied.",
+    "invalidStatus": "Invalid workflow status.",
+    "notFound": "Matter not found.",
+    "noPermissionDelete": "You do not have permission to delete matters."
+  },
+  "activity": {
+    "created": "Created matter \"{name}\"",
+    "updated": "Updated matter \"{name}\""
+  }
+}
