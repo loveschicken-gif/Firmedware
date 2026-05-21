@@ -1,5 +1,5 @@
 import bcrypt from "bcryptjs";
-import { Role } from "@prisma/client";
+import { Role, WorkflowEntityType } from "@prisma/client";
 import { prisma } from "@/lib/prisma";
 
 const PREFIX = "test-p0-";
@@ -77,6 +77,27 @@ export async function seedP0Fixtures(): Promise<P0Fixtures> {
     passwordHash
   );
 
+  // Ensure a default WorkflowStatus for MATTER exists so AUTH-010 can look it up.
+  await prisma.workflowStatus.upsert({
+    where: {
+      entityType_name: {
+        entityType: WorkflowEntityType.MATTER,
+        name: `${PREFIX}Open`,
+      },
+    },
+    create: {
+      entityType: WorkflowEntityType.MATTER,
+      name: `${PREFIX}Open`,
+      labelEn: "Open",
+      isDefault: true,
+      active: true,
+    },
+    update: {
+      isDefault: true,
+      active: true,
+    },
+  });
+
   const client = await prisma.client.create({
     data: {
       displayName: `${PREFIX}Client Alpha`,
@@ -131,7 +152,7 @@ export async function seedP0Fixtures(): Promise<P0Fixtures> {
   };
 }
 
-/** Removes test clients/matters/docs only. Users remain (ActivityLog is immutable). */
+/** Removes test clients/matters/docs/workflow-statuses only. Users remain (ActivityLog is immutable). */
 export async function cleanupP0Fixtures(): Promise<void> {
   const clients = await prisma.client.findMany({
     where: { displayName: { startsWith: PREFIX } },
@@ -139,20 +160,25 @@ export async function cleanupP0Fixtures(): Promise<void> {
   });
   const clientIds = clients.map((c) => c.id);
 
-  if (clientIds.length === 0) return;
+  if (clientIds.length > 0) {
+    await prisma.documentLink.deleteMany({
+      where: { clientId: { in: clientIds } },
+    });
+    await prisma.task.deleteMany({ where: { clientId: { in: clientIds } } });
+    await prisma.matterAssignment.deleteMany({
+      where: { matter: { clientId: { in: clientIds } } },
+    });
+    await prisma.matterGroupAssignment.deleteMany({
+      where: { matter: { clientId: { in: clientIds } } },
+    });
+    await prisma.matter.deleteMany({ where: { clientId: { in: clientIds } } });
+    await prisma.client.deleteMany({ where: { id: { in: clientIds } } });
+  }
 
-  await prisma.documentLink.deleteMany({
-    where: { clientId: { in: clientIds } },
+  // Clean up the test WorkflowStatus row.
+  await prisma.workflowStatus.deleteMany({
+    where: { name: { startsWith: PREFIX } },
   });
-  await prisma.task.deleteMany({ where: { clientId: { in: clientIds } } });
-  await prisma.matterAssignment.deleteMany({
-    where: { matter: { clientId: { in: clientIds } } },
-  });
-  await prisma.matterGroupAssignment.deleteMany({
-    where: { matter: { clientId: { in: clientIds } } },
-  });
-  await prisma.matter.deleteMany({ where: { clientId: { in: clientIds } } });
-  await prisma.client.deleteMany({ where: { id: { in: clientIds } } });
 }
 
 export { TEST_PASSWORD };
