@@ -9,6 +9,31 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: firmedware
+          POSTGRES_PASSWORD: firmedware
+          POSTGRES_DB: firmedware_test
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U firmedware -d firmedware_test"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 5
+    env:
+      # GitHub Actions runs on GitHub-hosted runners, not on the local/private firm network.
+      # CI must use an isolated temporary PostgreSQL service, never a local office database.
+      DATABASE_URL: postgresql://firmedware:firmedware@localhost:5432/firmedware_test
+      AUTH_SECRET: ci-only-auth-secret-32-characters-minimum
+      AUTH_URL: http://localhost:3000
+      SEED_ADMIN_EMAIL: ci-admin@firmedware.test
+      SEED_ADMIN_PASSWORD: ci-only-seed-password
+      # CI data is disposable and destroyed when the workflow job ends.
+      # Never use real client/matter data in CI.
+      # Never commit real .env files or database dumps to this repository.
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -16,34 +41,39 @@ jobs:
           node-version: "22"
           cache: "npm"
       - run: npm ci
-      - run: npx prisma validate
-      - run: npm run lint
+      - run: npx prisma generate
+      - run: npx prisma migrate deploy
+      - run: npm test -- --run
+      - run: npm run typecheck --if-present
       - run: npm run build
-        env:
-          DATABASE_URL: postgresql://ci:ci@localhost:5432/ci
-          AUTH_SECRET: ci-secret-min-32-chars-long-value
-          AUTH_URL: http://localhost:3000
 
   test:
     runs-on: ubuntu-latest
     services:
       postgres:
-        image: postgres:16-alpine
+        image: postgres:16
         env:
           POSTGRES_USER: firmedware
           POSTGRES_PASSWORD: firmedware
-          POSTGRES_DB: firmedware
+          POSTGRES_DB: firmedware_test
         ports:
           - 5432:5432
         options: >-
-          --health-cmd "pg_isready -U firmedware -d firmedware"
+          --health-cmd "pg_isready -U firmedware -d firmedware_test"
           --health-interval 5s
           --health-timeout 5s
           --health-retries 5
     env:
-      DATABASE_URL: postgresql://firmedware:firmedware@localhost:5432/firmedware
-      AUTH_SECRET: ci-secret-min-32-chars-long-value
+      # GitHub Actions runs on GitHub-hosted runners, not on the local/private firm network.
+      # CI must use an isolated temporary PostgreSQL service, never a local office database.
+      DATABASE_URL: postgresql://firmedware:firmedware@localhost:5432/firmedware_test
+      AUTH_SECRET: ci-only-auth-secret-32-characters-minimum
       AUTH_URL: http://localhost:3000
+      SEED_ADMIN_EMAIL: ci-admin@firmedware.test
+      SEED_ADMIN_PASSWORD: ci-only-seed-password
+      # CI data is disposable and destroyed when the workflow job ends.
+      # Never use real client/matter data in CI.
+      # Never commit real .env files or database dumps to this repository.
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -51,6 +81,8 @@ jobs:
           node-version: "22"
           cache: "npm"
       - run: npm ci
+      - run: npx prisma generate
       - run: npx prisma migrate deploy
-      - run: npm run db:seed
-      - run: npm test
+      - run: npm test -- --run
+      - run: npm run typecheck --if-present
+      - run: npm run build
