@@ -114,7 +114,7 @@ export function AIConnectorsForm({ settings }: { settings: FirmSettings }) {
           <p className="text-sm text-red-600">{state.error}</p>
         )}
 
-        <SubmitButton>{t("aiConnectors.save")}</SubmitButton>
+        <SubmitButton label={t("aiConnectors.save")} />
       </form>
     </div>
   );
