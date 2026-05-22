@@ -8,6 +8,7 @@ import {
   EntityType,
   Prisma,
 } from "@prisma/client";
+import type { DocumentProvider, DocumentSensitivity } from "@prisma/client";
 import { prisma } from "@/lib/prisma";
 import { logActivity } from "@/lib/activity";
 import { getServerI18n } from "@/lib/i18n/server";
@@ -63,10 +64,10 @@ function documentReferenceActivityMeta(
   doc: {
     id: string;
     referenceType: DocumentReferenceType;
-    provider: Prisma.DocumentLink["provider"];
+    provider: DocumentProvider;
     clientId: string;
     matterId: string | null;
-    sensitivity: Prisma.DocumentLink["sensitivity"];
+    sensitivity: DocumentSensitivity;
   }
 ): Prisma.InputJsonValue {
   return {
