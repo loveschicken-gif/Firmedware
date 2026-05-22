@@ -110,7 +110,7 @@ export function AIConnectorsForm({ settings }: { settings: FirmSettings }) {
         {state?.success && (
           <p className="text-sm text-green-700">{t("aiConnectors.saved")}</p>
         )}
-        {state?.error && (
+        {state && !state.success && (
           <p className="text-sm text-red-600">{state.error}</p>
         )}
 
